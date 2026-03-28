@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: #fdfaf4;
+    color: #1a1a1a;
+    overflow-x: hidden;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: 'Playfair Display', serif;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #faf3e4;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #2d6e4e;
+    border-radius: 3px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-forest-600 hover:bg-forest-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-gold {
+    @apply bg-gold-500 hover:bg-gold-600 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 active:scale-95 shadow-md hover:shadow-lg inline-flex items-center justify-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-forest-600 text-forest-600 hover:bg-forest-600 hover:text-white font-semibold px-6 py-3 rounded-xl transition-all duration-200 inline-flex items-center justify-center gap-2;
+  }
+
+  .form-input {
+    @apply w-full px-4 py-3 rounded-xl border border-forest-200 bg-white focus:outline-none focus:ring-2 focus:ring-forest-400 focus:border-transparent transition-all duration-200 text-gray-800 placeholder-gray-400 text-sm;
+  }
+
+  .card {
+    @apply bg-white rounded-2xl shadow-sm border border-cream-200 p-6;
+  }
+
+  .section-tag {
+    @apply text-gold-600 text-sm font-semibold tracking-widest uppercase;
+  }
+
+  .section-title {
+    @apply font-display text-4xl lg:text-5xl font-bold text-forest-900 mt-3;
+  }
+
+  .badge-pending {
+    @apply bg-amber-100 text-amber-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .badge-confirmed {
+    @apply bg-green-100 text-green-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .badge-cancelled {
+    @apply bg-red-100 text-red-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .badge-completed {
+    @apply bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .badge-none {
+    @apply bg-gray-100 text-gray-600 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .badge-deposit {
+    @apply bg-orange-100 text-orange-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .badge-full {
+    @apply bg-emerald-100 text-emerald-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .badge-refunded {
+    @apply bg-blue-100 text-blue-800 text-xs font-semibold px-3 py-1 rounded-full;
+  }
+
+  .leaf-bg {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%232d6e4e' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes fadeUp {
+    0% {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .animate-fade-up {
+    animation: fadeUp 0.6s ease-out forwards;
+  }
+
+  .shimmer {
+    background: linear-gradient(90deg, #f5e7c8 25%, #fdfaf4 50%, #f5e7c8 75%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+  }
+}
+
+
+
+
+/* In your global CSS file */
+/* Add to your global CSS file */
+@media (max-width: 767px) {
+  /* Ensure animated elements don't cause layout shifts */
+  .reveal,
+  .stagger-children,
+  .scale-reveal,
+  .slide-left,
+  .slide-right {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+  }
+  
+  /* Ensure stagger children maintain proper spacing */
+  .stagger-children {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .stagger-children > * {
+    flex: 1 1 auto;
+    min-width: 0;
+  }
+  
+  /* Prevent overflow issues */
+  .slide-left,
+  .slide-right {
+    overflow: visible;
+  }
+}
