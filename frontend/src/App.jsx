@@ -95,7 +95,7 @@ import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-route
 import { useEffect } from 'react'
 import { Toaster } from 'react-hot-toast'
 import { AuthProvider, useAuth } from './context/AuthContext'
-
+import './App.css'
 import Home from './pages/Home'
 import Book from './pages/Book'
 import Status from './pages/Status'

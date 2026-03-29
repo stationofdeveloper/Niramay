@@ -101,10 +101,10 @@ export default function Home() {
                                 { num: '100%', label: 'Natural Treatments' },
                             ].map((stat) => (
                                 <div key={stat.label} className="text-center">
-                                    <p className="font-display text-3xl font-bold text-green-900">
+                                    <p className="font-display text-3xl font-bold text-gold-500">
                                         {stat.num}
                                     </p>
-                                    <p className="text-green-900/60 text-xs mt-1">{stat.label}</p>
+                                    <p className="text-gold-500 text-xs mt-1">{stat.label}</p>
                                 </div>
                             ))}
                         </div>
