@@ -495,7 +495,7 @@ app.get('/api/feedback', async (req, res) => {
 
 
 
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 10000 ||4000
 app.listen(PORT, '0.0.0.0', () => {
   console.log(`🌿 Niramay backend running on http://localhost:${PORT}`)
 })
